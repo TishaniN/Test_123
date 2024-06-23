@@ -1,0 +1,347 @@
+.navbar{
+    width: 99%;
+    margin:0;
+    padding: 5px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between ;
+    position: sticky;
+    top: 0;
+    background-color: rgba(0,0,0,0.60);
+    animation: nav-load 600ms ease-out;
+}
+.navbar .links{
+    display: flex;
+}
+.logo{
+    width:100px;
+    cursor: pointer;
+    margin: -10px 10px;
+}
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+
+}
+.navbar ul li a{
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    
+}
+.navbar ul li::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: rgb(0, 150, 136);
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.3s    ;
+}
+.navbar ul li:hover:after{
+    width:100%;
+}
+.navbar ul li .active{
+    padding: 7px 7px;
+    border-radius: 5px;
+    background-color: rgba(0,150,136,0.30) ;
+}
+.btn{
+    border: 1px solid #3498db;
+    background: transparent;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin :10px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 25px;
+    color: white;
+    transition: scale 0.2 ease;
+}
+
+.btn::before{
+    content: " ";
+    position: absolute;
+    left:0;
+    width: 0;
+    height: 100%;
+    background: #3498db ;
+    z-index: -1;
+    transition: 0.5s;
+    bottom:0;
+    border-radius: 25px;
+}
+.btn:hover::before{
+    width: 100%;
+}
+.btn:active{
+    scale: 0.95;
+}
+.navbar .toggle_btn{
+    color: white;
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-right: 10px;
+}
+/* DROPDOWN MENU */
+.dropdown_menu{
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top:60px;
+    height:0;
+    width: 300px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.dropdown_menu.open{
+    height: 290px;
+}
+.dropdown_menu li{
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    list-style: none;
+}
+.dropdown_menu .btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.dropdown_menu li a{
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.dropdown_menu li a:hover{
+    padding: 7px 80px;
+    border-radius: 5px;
+    background-color: rgba(0,150,136,0.30) ; 
+}
+/*RESPONSIVE DESIGN*/
+@media(max-width: 992px){
+    .navbar .links,
+    .navbar .btn{
+        display: none;
+    }
+
+    .navbar .toggle_btn{
+        display: block;
+        
+    }
+
+    .dropdown_menu{
+        display: block;
+    }
+}
+
+@media(max-width: 576px){
+    .dropdown_menu{
+        left: 2rem;
+        width:unset;
+    }
+    .navbar .toggle_btn{
+        font-size: 2.3rem;
+    }
+}
+
+@keyframes nav-load {
+    0%{
+        transform: translateY(-100%);
+    }
+
+    100%{
+        transform: translateY(0);
+    }
+}
+@keyframes caption-load {
+    0%{
+        transform: translatex(-100%);
+    }
+
+    100%{
+        transform: translatex(0);
+    }
+}
+
+.footer{
+    background: rgba(0,0,0,0.90);
+    padding:30px 0 10px;
+    width: 100%;
+    position: absolute;
+    color: white;
+    font-size: 13px;
+    line-height: 17px;
+}
+.row{
+    width:85%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.col{
+    flex-basis: 30%;
+    padding:10px;
+}
+.col:nth-child(2){
+    flex-basis: 10%;
+}
+.col:nth-child(1){
+    font-size: 15px;
+    text-align: justify;
+}
+.footer .logo{
+    width:200px;
+    margin-bottom: 30px ;
+}
+
+.col ul li{
+    list-style: none;
+    margin-bottom: 33px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Roboto Condensed';
+}
+.col ul li a{
+    text-decoration: none;
+    color: #F4A460;  
+}
+.col ul li a:hover{
+    color: #AA6C39;  
+}
+.em{
+    width:fit-content;
+    text-transform: uppercase;
+    margin:30px 0;
+    font-size: 18px;
+}
+.em a{
+    color: #fff;
+    text-decoration: none;
+}
+.col h1{
+    width: fit-content;
+    margin: 40px 0;
+    position: relative; 
+    color:#F4A460;
+    letter-spacing: 1px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #F4A460;
+ }
+ .social-media .fa-brands{
+    width: 40px;
+    height:420x;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size:20px;
+    color : black;
+    background: white;
+    margin: 0 15px;
+ }
+ .social-media .fa-brands:hover{
+    background: rgb(117, 114, 114);
+ }
+ hr{
+    width:90%;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    margin: 20px auto;
+ }
+ .copyright{
+    text-align: center;
+    font-size: 10px;
+ }
+ .footer p , h1{
+    font-family: 'Roboto Condensed';
+ }
+/*
+ <div class="banner">
+            <div class="navbar">
+                <img src="logo.png" class="logo"\>
+                <div class="links">
+                <ul >
+                    <li><a  class="active" href="button.html">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                </div>
+                <button type="button" class="btn">Get in touch</button>
+                <div class="toggle_btn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+
+            <div class="dropdown_menu">
+                <li><a href="button.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><button type="button" class="btn">Get in touch</button></li>
+            </div>
+            <div class="caption">
+                <p>We capture your <br>today's moments that will<br> amaze your hearts tomorrow.</p>
+            </div>
+        </div>
+        <script> 
+            const toggleBtn = document.querySelector('.toggle_btn')
+            const toggleBtnIcon = document.querySelector('.toggle_btn i')
+            const dropDownMenu = document.querySelector('.dropdown_menu')
+
+            toggleBtn.onclick = function(){
+                dropDownMenu.classList.toggle('open')
+                const isOpen = dropDownMenu.classList.contains('open')
+
+                toggleBtnIcon.classList = isOpen
+                ? 'fa-solid fa-xmark'
+                : 'fa-solid fa-bars'
+            }
+        </script>
+        <div class="footer">
+            <div class="row">
+                <div class="col">
+                    <center><img src="logo.png" class="logo" ></center>
+                    <p><q>Photography is a way of feelings, of touching, of loving. 
+                        What we have caught is captured forever.It remenbers little things, 
+                        long after you have forgotten everything.</q></p>
+                </div>
+                <div class="col">
+                    <ul>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Portfolio</a></li>
+                        <li><a href="">Blog</a></li>
+                        <li><a href="">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <p class="email"><a href="mailto:abcd123@gmail.com">abcd123@gmail.com</a></p>
+                    <h1>+94 71 234 5678</h1>
+                    <div class="social-media">
+                        <a href="https://www.facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.youtube.com"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://www.whatsapp.com"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">COPYRIGHT 2023 &#169; ALEX ANDRIA PHOTOGRAPHY</p>
+        </div>
+    
+        */
+    
